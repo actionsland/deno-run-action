@@ -1,0 +1,15 @@
+name: Run Deno
+description: Run a Deno program
+
+runs:
+  using: docker
+  image: Dockerfile
+
+branding:
+  icon: git-commit
+  color: purple
+
+inputs:
+  script:
+    description: The filename or url to the script
+    required: true

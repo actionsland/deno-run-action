@@ -1,0 +1,25 @@
+name: Test Deno
+
+on:
+  - workflow_dispatch
+
+jobs:
+  test:
+    runs-on: ubuntu-18.04
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Run from private repository
+        uses: ./
+        with:
+          script: https://raw.githubusercontent.com/crqra/deno-run-action-private-test/master/main.ts
+
+      - name: Run from gist
+        uses: ./
+        with:
+          script: https://gist.githubusercontent.com/crqra/2511e0b5f360ce260a7e4f58cd4403ca/raw/c17c06c05dfc74adfa0bd9db201dabd4c8f0b69c/actions_land_welcome_deno.ts
+
+      - name: Run from GitHub repository
+        uses: ./
+        with:
+          script: crqra/deno-run-action-private-test@master/main.ts

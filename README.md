@@ -1,1 +1,3 @@
-# deno-run-action
+# `deno-run-action`
+
+> A GitHub Action to make your life easier.
